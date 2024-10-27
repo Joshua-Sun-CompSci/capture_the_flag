@@ -1,0 +1,11 @@
+Logic for static board evaluation v1.2:
+1. If Player (played by computer) wins, board score = 100. Board either A. No opponent's flag left; B. No opponent's pawns left; C. Friendly flag is at least one row below of all opponent's pawns, meaning it has moved passed all opponent's pawns
+2. If Player (played by computer) loses, board score = -100. Board either A. No friendly flag left; B. No friendly pawns left; C. Opponent's flag is at least one row above of all friendly pawns, meaning it has moved passed all friendly pawns
+3. A friendly pawn is worth 1 point, and an opponent pawn is worth -1 points. Friendly flag is worth 100 points, and opponent's flag is worth -100 points, meaning that if friendly flag is not on the board, you lose automatically, and vice versa. This is here just in case of the checking flag mentioned above encounters any bugs.
+
+How to play the game:
+1. Make sure Haskell is installed. Type "hgci" to start the Haskell compiler.
+2. Once entered hgci, type ":load capture_the_flag.hs" to load and interpret the module.
+3. Once the module is loaded successfully, type "playGame history player depth", where "history" is a list of boards, the head of history is the current board, and "player" is the side you intend to play as, and "depth" is how many steps you want computer to search ahead. The higher the "depth" is, the more time it consumes, and the harder to beat computer. Example usage: playGame ["-wWw--www-------bbb--bBb-"] 'b' 4
+4. Once you are prompted to make the move, enter a tuple of coordinates, where each coordinate is a tuple of x and y value. Coordinate values start at (1,1) and end with (board_dimension,board_dimension). The element on the first coordinate will replace the element on the second coordinate then. Example usage: ((1,1),(1,2))
+Important note for #4: to make this game flexible and forgiving, human player CAN make illegal moves, such as ((1,1),(3,3)) is allowed and the element at (3,3) will be replaced by the element in (1,1). This is here because I personally cannot beat the computer so I left this here in case you want to cheat in this game. This is not encouraged, although.
