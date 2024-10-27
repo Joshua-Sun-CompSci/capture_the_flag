@@ -25,6 +25,3 @@ This project is an implementation of a **Capture the Flag** game AI using Haskel
 ## Requirements
 - Haskell (GHC) for compiling and running the project.
 
----
-
-Feel free to copy and paste this into your `README.md` file. Let me know if you'd like any further customization!
